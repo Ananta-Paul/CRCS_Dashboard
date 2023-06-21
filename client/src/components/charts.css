@@ -143,7 +143,8 @@ input[type="range"]::-webkit-slider-thumb {
   .bub,
   .pi,
   .tree,
-  .bar {
+  .bar,
+  .indiaMap {
     width: calc(100vw - 10px);
     height: calc(100vw - 50px);
   }
@@ -170,7 +171,40 @@ input[type="range"]::-webkit-slider-thumb {
 }
 .text {
   color: white;
-  padding-left: 30px;
+  padding-left: 15 + px;
   font-size: 1.4rem;
   font-weight: 700;
+}
+.overview-box {
+  margin-top: 11px !important;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+.overview-icon {
+  font-size: 40px;
+  color: #333;
+  background-color: #f2f2f2;
+  border-radius: 50%;
+  padding: 15px;
+  margin-right: 20px;
+}
+
+.overview-content {
+  flex-grow: 1;
+}
+
+.overview-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.overview-value {
+  font-size: 28px;
+  color: #333;
 }

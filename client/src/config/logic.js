@@ -186,17 +186,38 @@ export const processTree = (data) => {
 };
 export const processBar = (data) => {
   let arr2 = [];
-
-  data.forEach((obj) => {
-    let a = {};
-    a["title"] = obj.title;
-    a["relevance"] = (fixit(obj.relevance) * 100) / 10;
-    a["impact"] = (fixit(obj.impact) * 100) / 5;
-    a["intensity"] = (fixit(obj.intensity) * 100) / 100;
-    a["likelihood"] = (fixit(obj.likelihood) * 100) / 5;
-
-    arr2.push(a);
+  data.forEach((x) => {
+    if (x.hasOwnProperty("Date of Registration")) {
+      const inputDate = new Date(x["Date of Registration"]);
+      const year = inputDate.getFullYear();
+      if (
+        arr2.some((val) => {
+          return val["title"] === year;
+        })
+      ) {
+        arr2.forEach((k) => {
+          if (k["title"] === year) {
+            k["No of Registration"]++;
+          }
+        });
+      } else {
+        let a = {};
+        // console.log(year);
+        a["title"] = year;
+        a["No of Registration"] = 1;
+        arr2.push(a);
+      }
+    }
   });
+
+  arr2.sort((a, b) => a.title - b.title);
+  // let arr3 = [];
+  // arr2.forEach((y) => {
+  //   let a = {};
+  //   a[y.year.toString()] = y.value;
+  //   arr3.push(a);
+  // });
+  // console.log(arr3);
   return arr2;
 };
 export const sortYearByOccurrence = (array) => {

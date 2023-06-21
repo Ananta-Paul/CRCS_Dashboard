@@ -55,7 +55,7 @@ export const Charts = ({ data }) => {
       setPie(processPie(data));
       setBub(processBub(data));
       // setTree(processTree(data));
-      // setBar(processBar(data));
+      setBar(processBar(data));
     }
     //console.log("inner");
     fetchdata();
@@ -69,6 +69,9 @@ export const Charts = ({ data }) => {
           <MyResponsiveCalendar data={calender} />
         </div>
       )}
+      <div className="bar">
+        <MyResponsiveBar data={bar} />
+      </div>
       {geo && <MyResponsiveChoropleth data={geo} />}
       {pie && (
         <div className="bub">
@@ -80,15 +83,13 @@ export const Charts = ({ data }) => {
           <MyResponsiveCirclePackingCanvas data={bub} />
         </div>
       )}
-      {/*tree && tree.hasOwnProperty("children") && (
+      {/* {tree && tree.hasOwnProperty("children") && (
         <div className="tree">
           <MyResponsiveTreeMap data={tree} />
         </div>
-      )}
-      <div className="bar">
-        <MyResponsiveBar data={bar} />
-      </div>
-      {keys && radarData && (
+      )} */}
+
+      {/*keys && radarData && (
         <div className="radar">
           {" "}
           <MyResponsiveRadar data={radarData} keys={keys} />

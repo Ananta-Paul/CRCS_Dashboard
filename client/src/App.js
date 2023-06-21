@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
 import axios from "axios";
 import { Charts } from "./components/charts";
 import { Filter } from "./components/filter";
